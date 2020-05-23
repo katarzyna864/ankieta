@@ -1,0 +1,10 @@
+
+{% autoescape off %}
+
+{% if user.0 == 'found' %}
+    <p>Odpowiedź znajduje sie w bazie.</p>
+{% else %}
+    <p>Odpowiedż o takim identyfikatorze nie znajduje się w bazie.</p>
+{% endif %}
+
+{% endautoescape %}

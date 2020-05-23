@@ -1,0 +1,27 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'ankiety/style.css' %}">
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+
+        <li><a href="{% url 'ankiety:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Brak ankiet.</p>
+{% endif %}
+
+<br>
+
+<form action="{% url 'ankiety:useranswers' %}" method="post">
+{% csrf_token %}
+<input type="text" name="user_id" id="user_id">
+<input type="submit" value="Zobacz swoje odpowiedzi">
+</form>
+
+<br>
+
+
+<a href="{% url 'ankiety:index' %}">Powrót na stonę główną</a>

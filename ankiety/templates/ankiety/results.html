@@ -1,0 +1,21 @@
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<p>{{ id_hash }}</p>
+
+<a href="{% url 'ankiety:detail' question.id %}">Czy chcesz zagłosować jeszcze raz?</a>
+<br>
+<a href="{% url 'ankiety:index' %}">Powrót na stonę główną</a>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
