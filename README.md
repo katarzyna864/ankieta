@@ -21,8 +21,7 @@ można znaleźć na stronie: https://docs.djangoproject.com/en/3.0/intro/
 **Kod strony**
 *****
 
-Folder templates
-########
+**Folder templates**
 
 *adminpanel.html* :
 szablon strony z formularzem do weryfikowania udzielenia przez użytkownika odpowiedzi
@@ -66,12 +65,10 @@ modele, przechowujące udzielone odpowiedzi
 *class User(models.Model), class User2(models.Model)* :
 modele, przechowujące informacje o użytkownikach, którzy udzielili odpowiedzi na pytanie
 
-urls.py
-########
+**urls.py**
 Definiuje ścieżki dla poszczególnych widoków.
 
-views.py
-########
+**views.py**
 
 *def useranswers(request)* :
 służy do sprawdzenia, czy głos użytkownika w niezmianionej formie znajduje się w bazie
