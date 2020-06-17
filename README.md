@@ -17,6 +17,8 @@ na sprawdzenie, czy dana osoba udzieliła już odpowiedzi na pytanie.
 Aplikacja działa na serwerze Django. Instrukcje, dotyczące instalacji Django
 można znaleźć na stronie: https://docs.djangoproject.com/en/3.0/intro/
 
+Aplikacja korzysta z systemu zarządzania bazami danych SQLite, którego moduł sqlite3 dostarczany jest w Python Standard Library. Baza danych znajduje się w pliku db.sqlite3.
+
 *****
 **Kod strony**
 *****
@@ -94,11 +96,11 @@ służy do zapisywania głosu w bazie
 
 - date - czas udzielenia odpowiedzi
 
+- rand - decyduje, do której tabeli zostaną zapisane dane. Tabela wybierana jest losowo, aby uniemożliwić powiązanie użytkownika z odpowiedzią przez id wpisów w tabeli ankiety_vote i ankiety_user.
+
 - vote_data - dane odpowiedzi, które zostaną zapisane do tabeli ankiety_vote lub ankiety_vote2
 
 - user_data - dane użytkownika, które zostaną zapisane do tabeli ankiety_user lub ankiety_user2
-
-- rand - decyduje, do której tabeli zostaną zapisane dane
 
 
 *****
