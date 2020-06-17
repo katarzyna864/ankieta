@@ -90,7 +90,7 @@ funkcja, wyświetlająca pytanie
 *def vote(request, question_id)* :
 służy do zapisywania głosu w bazie
 
-- id_hash - hash, identyfikujący oddany przez użytkownika głos. Hash tworzony jest na podstawie id pytania, id odpowiedzi, tekstu odpowiedzi i czasu oddania głosu.
+- id_hash - hash, identyfikujący oddany przez użytkownika głos. Hash tworzony jest na podstawie id pytania, id odpowiedzi, treści odpowiedzi i czasu oddania głosu.
 
 - rand = random.randint(0, 1) : losuje, do której tabeli zapisany zostanie głos
 
