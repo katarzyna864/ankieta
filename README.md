@@ -43,7 +43,6 @@ szablone strony, weryfikującej udzielenie przez użytkownika odpowiedzi
 
 
 **admin.py**
-########
 
 Dodaje interfejs admina Django. Więcej informacji na stronie: https://docs.djangoproject.com/en/3.0/ref/contrib/admin/
 
