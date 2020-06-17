@@ -1,10 +1,10 @@
-<h1>{{ question.question_text }}</h1>
+{% load static %}
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+<link rel="stylesheet" type="text/css" href="{% static 'ankiety/style.css' %}">
+
+<div class="center">
+
+<h2>Twoja odpowiedź została zapisana</h2>
 
 <p>{{ id_hash }}</p>
 
@@ -19,3 +19,5 @@
     {% endfor %}
 </ul>
 {% endif %}
+
+</div>

@@ -1,6 +1,10 @@
-<h1>{{ question.question_text }}</h1>
+{% load static %}
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<link rel="stylesheet" type="text/css" href="{% static 'ankiety/style.css' %}">
+<div class="center">
+<h2>{{ question.question_text }}</h2>
+
+{% if error_message %}<p class="error">{{ error_message }}</p>{% endif %}
 
 <form action="{% url 'ankiety:vote' question.id %}" method="post">
 {% csrf_token %}
@@ -9,10 +13,11 @@
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
 {% endfor %}
 <p>Podaj swoje imię</p>
-<input type="text" name="user_id" id="user_id">
+<input type="text" name="user_id" id="user_id" required>
 
 <input type="submit" value="Wyślij">
-
-
-
 </form>
+
+<br>
+<a href="{% url 'ankiety:index' %}">Powrót na stonę główną</a>
+</div>

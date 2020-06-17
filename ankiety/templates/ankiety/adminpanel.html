@@ -2,13 +2,22 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'ankiety/style.css' %}">
 
+<div class="center">
 
 <form action="{% url 'ankiety:whetheranswered' %}" method="post">
 {% csrf_token %}
+
 <input type="text" name="user_id2" id="user_id2">
+<label for="user_id2">Nazwa użytkownika</label><br>
+
+<input type="text" name="qid" id="qid">
+<label for="qid">Numer pytania</label><br>
+
 <input type="submit" value="Sprawdź czy użytkownik zagłosował">
 </form>
 
 <br>
 
 <a href="{% url 'ankiety:index' %}">Powrót na stonę główną</a>
+
+</div>

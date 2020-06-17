@@ -1,8 +1,20 @@
 body {
-    background: yellow url("images/background2.jpg") no-repeat;
+    background: #d8f0f2;
     background-position: center;
 }
 
 li a {
     color: green;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
 }

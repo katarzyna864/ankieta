@@ -1,4 +1,7 @@
+{% load static %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'ankiety/style.css' %}">
+<div class="center">
 {% autoescape off %}
 
 {% if user.0 == 'found' %}
@@ -8,3 +11,4 @@
 {% endif %}
 
 {% endautoescape %}
+</div>

@@ -2,6 +2,8 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'ankiety/style.css' %}">
 
+<div class="center">
+<h3>Dostępne ankiety:</h3>
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
@@ -15,13 +17,14 @@
 
 <br>
 
+<h3>Sprawdź, czy Twoja odpowiedź znajduje się w bazie:</h3>
 <form action="{% url 'ankiety:useranswers' %}" method="post">
 {% csrf_token %}
 <input type="text" name="user_id" id="user_id">
-<input type="submit" value="Zobacz swoje odpowiedzi">
+<input type="submit" value="Sprawdź">
 </form>
 
 <br>
+<a href="/ankiety/adminpanel">Sprawdź czy użytkownik zagłosował</a>
 
-
-<a href="{% url 'ankiety:index' %}">Powrót na stonę główną</a>
+</div>
