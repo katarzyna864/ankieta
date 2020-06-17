@@ -92,7 +92,13 @@ służy do zapisywania głosu w bazie
 
 - id_hash - hash, identyfikujący oddany przez użytkownika głos. Hash tworzony jest na podstawie id pytania, id odpowiedzi, treści odpowiedzi i czasu oddania głosu.
 
-- rand = random.randint(0, 1) : losuje, do której tabeli zapisany zostanie głos
+- date - czas udzielenia odpowiedzi
+
+- vote_data - dane odpowiedzi, które zostaną zapisane do tabeli ankiety_vote lub ankiety_vote2
+
+- user_data - dane użytkownika, które zostaną zapisane do tabeli ankiety_user lub ankiety_user2
+
+- rand - decyduje, do której tabeli zostaną zapisane dane
 
 
 *****
