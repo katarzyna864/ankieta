@@ -1,19 +1,21 @@
-# Aplikacja Ankiety
+**Aplikacja Ankiety**
+=============================================
 Aplikacja Ankiety służy do przeprowadzania anonomowych ankiet z zachowaniem możliwości sprawdzenia przez ankietowanego
 czy jego odpowiedź w niezmienionej formie znajduje sie w bazie danych. Aplikacja posiada również funkcjonalność, pozwalającą
 na sprawdzenie, czy dana osoba udzieliła już odpowiedzi na pytanie.
 
-# Cechy programu
+*****
+**Cechy programu**
+*****
 * zachowanie anonimowości głosujących
 * możliwość zweryfikowania własnej odpowiedzi
 * możliwośc sprawdzenia, czy dana osoba udzieliła już odpowiedzi
 
-# Instalacja
+*****
+**Instalacja**
+*****
 Aplikacja działa na serwerze Django. Instrukcje, dotyczące instalacji Django
 można znaleźć na stronie: https://docs.djangoproject.com/en/3.0/intro/
-
-# Dokumantacja
-Dokumentacja znajduje się w folderze 
 
 *****
 **Kod strony**
