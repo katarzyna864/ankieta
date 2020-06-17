@@ -76,12 +76,12 @@ def results(request, question_id):
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
-    d1 = time.asctime()
-    datehash = hashlib.sha256(str(d1).encode('ascii')).hexdigest()
+    date = time.asctime()
+    datehash = hashlib.sha256(str(date).encode('ascii')).hexdigest()
 
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
-        a = request.POST['user_id'].encode('utf-8')
+        username = request.POST['user_id'].encode('utf-8')
 
         id_hash = hashlib.sha256(str(datehash).encode('ascii') + str(selected_choice.id).encode('ascii') +
                                  str(selected_choice.question_id).encode('ascii') + str(selected_choice.choice_text).encode('utf-8')).hexdigest()
@@ -95,19 +95,19 @@ def vote(request, question_id):
     else:
         rand = random.randint(0, 1)
         if rand == 1:
-            b = Vote(date=datehash, voted_choice=selected_choice, voted_question=question, voted_answer=selected_choice.choice_text)
-            b.save()
+            vote_data = Vote(date=datehash, voted_choice=selected_choice, voted_question=question, voted_answer=selected_choice.choice_text)
+            vote_data.save()
         else:
-            b = Vote2(date=datehash, voted_choice=selected_choice, voted_question=question, voted_answer=selected_choice.choice_text)
-            b.save()
+            vote_data = Vote2(date=datehash, voted_choice=selected_choice, voted_question=question, voted_answer=selected_choice.choice_text)
+            vote_data.save()
 
         rand = random.randint(0, 1)
         if rand == 1:
-            c = User(username=a.decode(), question=question.id)
-            c.save()
+            user_data = User(username=username.decode(), question=question.id)
+            user_data.save()
         else:
-            c = User2(username=a.decode(), question=question.id)
-            c.save()
+            user_data = User2(username=username.decode(), question=question.id)
+            user_data.save()
 
         return HttpResponseRedirect(reverse('ankiety:results', args=(question.id,)))
 

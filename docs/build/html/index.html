@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Welcome to Aplikacja Ankiety’s documentation! &#8212; Aplikacja Ankiety  documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacja Ankiety &#8212; Aplikacja Ankiety  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,31 +31,84 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-aplikacja-ankiety-s-documentation">
-<h1>Welcome to Aplikacja Ankiety’s documentation!<a class="headerlink" href="#welcome-to-aplikacja-ankiety-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="aplikacja-ankiety">
-<h1>Aplikacja Ankiety<a class="headerlink" href="#aplikacja-ankiety" title="Permalink to this headline">¶</a></h1>
-<p>Aplikacja Ankiety służy do przeprowadzania anonomowych ankiet z zachowaniem możliwości sprawdzenia przez ankietowanego czy jego
-odpowiedź w niezmienionej formie znajduje sie w bazie danych oraz sprawdzenia czy dana osoba udzieliła odpowiedzi.</p>
+  <div class="section" id="aplikacja-ankiety">
+<h1><strong>Aplikacja Ankiety</strong><a class="headerlink" href="#aplikacja-ankiety" title="Permalink to this headline">¶</a></h1>
+<p>Aplikacja Ankiety służy do przeprowadzania anonomowych ankiet z zachowaniem możliwości sprawdzenia przez ankietowanego
+czy jego odpowiedź w niezmienionej formie znajduje sie w bazie danych. Aplikacja posiada również funkcjonalność, pozwalającą
+na sprawdzenie, czy dana osoba udzieliła już odpowiedzi na pytanie.</p>
 <div class="section" id="cechy-programu">
-<h2>Cechy programu<a class="headerlink" href="#cechy-programu" title="Permalink to this headline">¶</a></h2>
+<h2><strong>Cechy programu</strong><a class="headerlink" href="#cechy-programu" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>tworzenie ankiet i zbieranie odpowiedzi</p></li>
 <li><p>zachowanie anonimowości głosujących</p></li>
-<li><p>możliwośc sprawdzenia czy dana osoba udzieliła odpowiedzi</p></li>
+<li><p>możliwość zweryfikowania własnej odpowiedzi</p></li>
+<li><p>możliwośc sprawdzenia, czy dana osoba udzieliła już odpowiedzi</p></li>
 </ul>
 </div>
 <div class="section" id="instalacja">
-<h2>Instalacja<a class="headerlink" href="#instalacja" title="Permalink to this headline">¶</a></h2>
-<p>Aplikacja działa na serwerze Django.</p>
+<h2><strong>Instalacja</strong><a class="headerlink" href="#instalacja" title="Permalink to this headline">¶</a></h2>
+<p>Aplikacja działa na serwerze Django. Instrukcje, dotyczące instalacji Django
+można znaleźć na stronie: <a class="reference external" href="https://docs.djangoproject.com/en/3.0/intro/">https://docs.djangoproject.com/en/3.0/intro/</a></p>
+<p>Aplikacja korzysta z systemu zarządzania bazami danych SQLite, którego moduł sqlite3 dostarczany jest w Python Standard Library. Baza danych znajduje się w pliku db.sqlite3.</p>
+</div>
+<div class="section" id="kod-strony">
+<h2><strong>Kod strony</strong><a class="headerlink" href="#kod-strony" title="Permalink to this headline">¶</a></h2>
+<p><strong>Folder templates</strong></p>
+<p><em>adminpanel.html</em> :
+szablon strony z formularzem do weryfikowania udzielenia przez użytkownika odpowiedzi</p>
+<p><em>detail.html</em> :
+szablon strony, wyświetlajacej pytanie</p>
+<p><em>index.html</em> :
+szablon strony głównej</p>
+<p><em>results.html</em> :
+szablon strony, na którą użytkownik jest przenoszony po udzieleniu odpowiedzi na pytanie</p>
+<p><em>useranswers.html</em> :
+szablon strony, weryfikującej niezmienność rekordu w bazie</p>
+<p><em>whetheranswered.html</em> :
+szablone strony, weryfikującej udzielenie przez użytkownika odpowiedzi</p>
+<p><strong>admin.py</strong></p>
+<p>Dodaje interfejs admina Django. Więcej informacji na stronie: <a class="reference external" href="https://docs.djangoproject.com/en/3.0/ref/contrib/admin/">https://docs.djangoproject.com/en/3.0/ref/contrib/admin/</a></p>
+<p><em>class QuestionAdmin(admin.ModelAdmin)</em> : klasa, służąca do dodawania nowych pytań</p>
+<p><strong>models.py</strong></p>
+<p>Plik, zawierający modele.</p>
+<p><em>class Question(models.Model)</em> :
+model pytania</p>
+<p><em>class Choice(models.Model)</em> :
+model odpowiedzi</p>
+<p><em>class Vote(models.Model), class Vote(models.Model)</em> :
+modele, przechowujące udzielone odpowiedzi</p>
+<p><em>class User(models.Model), class User2(models.Model)</em> :
+modele, przechowujące informacje o użytkownikach, którzy udzielili odpowiedzi na pytanie</p>
+<p><strong>urls.py</strong></p>
+<p>Definiuje ścieżki dla poszczególnych widoków.</p>
+<p><strong>views.py</strong></p>
+<p><em>def useranswers(request)</em> :
+służy do sprawdzenia, czy głos użytkownika w niezmianionej formie znajduje się w bazie</p>
+<ul class="simple">
+<li><p>id - wpisany przez użytkownika hash, który otrzymał po udzieleniu odpowiedzi</p></li>
+<li><p>hash - generuje hash z kolejnych rekordów w tabeli; następnie hash jest porównywany z tym, podanym przez użytkownika</p></li>
+</ul>
+<p><em>def whetheranswered(request)</em> :
+służy do sprawdzania, czy dany użytkownik udzielił odpowiedzi na pytanie</p>
+<ul class="simple">
+<li><p>id2 - nazwa użytkownika</p></li>
+<li><p>qid - numer pytania</p></li>
+</ul>
+<p><em>def detail(request, question_id)</em> :
+funkcja, wyświetlająca pytanie</p>
+<p><em>def vote(request, question_id)</em> :
+służy do zapisywania głosu w bazie</p>
+<ul class="simple">
+<li><p>id_hash - hash, identyfikujący oddany przez użytkownika głos. Hash tworzony jest na podstawie id pytania, id odpowiedzi, treści odpowiedzi i czasu oddania głosu.</p></li>
+<li><p>date - czas udzielenia odpowiedzi</p></li>
+<li><p>vote_data - dane odpowiedzi, które zostaną zapisane do tabeli ankiety_vote lub ankiety_vote2</p></li>
+<li><p>user_data - dane użytkownika, które zostaną zapisane do tabeli ankiety_user lub ankiety_user2</p></li>
+<li><p>rand - decyduje, do której tabeli zostaną zapisane dane</p></li>
+</ul>
 </div>
 <div class="section" id="pliki-zrodlowe">
-<h2>Pliki źródłowe<a class="headerlink" href="#pliki-zrodlowe" title="Permalink to this headline">¶</a></h2>
+<h2><strong>Pliki źródłowe</strong><a class="headerlink" href="#pliki-zrodlowe" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Source Code: https://github.com/katarzyna864/ankieta</p></li>
+<li><p>Source Code: <a class="reference external" href="https://github.com/katarzyna864/ankieta">https://github.com/katarzyna864/ankieta</a></p></li>
 </ul>
 </div>
 </div>
@@ -110,7 +164,7 @@ odpowiedź w niezmienionej formie znajduje sie w bazie danych oraz sprawdzenia c
       &copy;2020, Katarzyna Marcinek.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
