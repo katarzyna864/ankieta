@@ -65,6 +65,7 @@ modele, przechowujące udzielone odpowiedzi
 modele, przechowujące informacje o użytkownikach, którzy udzielili odpowiedzi na pytanie
 
 **urls.py**
+
 Definiuje ścieżki dla poszczególnych widoków.
 
 **views.py**
