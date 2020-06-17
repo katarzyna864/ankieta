@@ -43,15 +43,14 @@ szablon strony, weryfikującej niezmienność rekordu w bazie
 szablone strony, weryfikującej udzielenie przez użytkownika odpowiedzi
 
 
-admin.py
+**admin.py**
 ########
 
 Dodaje interfejs admina Django. Więcej informacji na stronie: https://docs.djangoproject.com/en/3.0/ref/contrib/admin/
 
 *class QuestionAdmin(admin.ModelAdmin)* : klasa, służąca do dodawania nowych pytań
 
-models.py
-########
+**models.py**
 
 Plik, zawierający modele.
 
