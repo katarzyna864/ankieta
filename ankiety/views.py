@@ -25,24 +25,29 @@ def adminpanel(request):
 
 def useranswers(request):
     id = request.POST['user_id'].encode('ascii')
-    all_objects = Vote.objects.all()
-    all_objects2 = Vote2.objects.all()
     a = {}
     i = 0
-    for obj in all_objects:
-        hash = hashlib.sha256(str(obj.date).encode('ascii') + str(obj.voted_choice_id).encode('ascii') +
-                              str(obj.voted_question_id).encode('ascii') + str(obj.voted_answer).encode('utf-8')).hexdigest()
-        if hash == id.decode('ascii'):
-            a[i] = 'found'
-            i += 1
-    if a.get(0) != 'found':
-        for obj in all_objects2:
-            hash = hashlib.sha256(str(obj.date).encode('ascii') + str(obj.voted_choice_id).encode('ascii') +
-                                  str(obj.voted_question_id).encode('ascii') + str(obj.voted_answer).encode(
+
+    user_hash = str(id).replace("b'", "").replace("'", "")
+    # q = 'SELECT * FROM ankiety_vote2 WHERE Hash="' + user_hash + '" UNION SELECT * FROM ankiety_vote WHERE Hash="' + user_hash + '"'
+    q = 'SELECT * FROM ankiety_vote2 WHERE Hash="' + user_hash + '"'
+    for p in Vote.objects.raw(q):
+        hash = hashlib.sha256(str(p.date).encode('ascii') + str(p.voted_choice_id).encode('ascii') +
+                                  str(p.voted_question_id).encode('ascii') + str(p.voted_answer).encode('utf-8')).hexdigest()
+        i = 1
+        if p.hash == hash:
+            a[0] = 'found'
+
+    if i == 0:
+        q2 ='SELECT * FROM ankiety_vote WHERE Hash="' + user_hash + '"'
+        for p in Vote.objects.raw(q2):
+            hash = hashlib.sha256(str(p.date).encode('ascii') + str(p.voted_choice_id).encode('ascii') +
+                                  str(p.voted_question_id).encode('ascii') + str(p.voted_answer).encode(
                 'utf-8')).hexdigest()
-            if hash == id.decode('ascii'):
-                a[i] = 'found'
-                i += 1
+            i = 1
+            if p.hash == hash:
+                a[0] = 'found'
+
     return render(request, 'ankiety/useranswers.html', {'user': a})
 
 def whetheranswered(request):
@@ -95,10 +100,10 @@ def vote(request, question_id):
     else:
         rand = random.randint(0, 1)
         if rand == 1:
-            vote_data = Vote(date=datehash, voted_choice=selected_choice, voted_question=question, voted_answer=selected_choice.choice_text)
+            vote_data = Vote(date=datehash, voted_choice=selected_choice, voted_question=question, voted_answer=selected_choice.choice_text, hash=id_hash)
             vote_data.save()
         else:
-            vote_data = Vote2(date=datehash, voted_choice=selected_choice, voted_question=question, voted_answer=selected_choice.choice_text)
+            vote_data = Vote2(date=datehash, voted_choice=selected_choice, voted_question=question, voted_answer=selected_choice.choice_text, hash=id_hash)
             vote_data.save()
 
         rand = random.randint(0, 1)

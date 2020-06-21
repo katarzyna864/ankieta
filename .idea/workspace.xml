@@ -21,27 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="91284dd3-f32c-48c2-924f-0e8d9c8b89ef" name="Default Changelist" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ankiety/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ankiety/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ankiety/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ankiety/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ankiety/templates/ankiety/adminpanel.html" beforeDir="false" afterPath="$PROJECT_DIR$/ankiety/templates/ankiety/adminpanel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ankiety/templates/ankiety/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ankiety/templates/ankiety/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ankiety/templates/ankiety/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ankiety/templates/ankiety/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ankiety/templates/ankiety/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/ankiety/templates/ankiety/results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ankiety/templates/ankiety/useranswers.html" beforeDir="false" afterPath="$PROJECT_DIR$/ankiety/templates/ankiety/useranswers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ankiety/templates/ankiety/whetheranswered.html" beforeDir="false" afterPath="$PROJECT_DIR$/ankiety/templates/ankiety/whetheranswered.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ankiety/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ankiety/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/.buildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_sources/index.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_static/basic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_static/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/doctools.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_static/doctools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_static/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/searchtools.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_static/searchtools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/underscore-1.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_static/underscore-1.3.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/underscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_static/underscore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/genindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/index.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +70,14 @@
       <option name="presentableId" value="Default" />
       <updated>1589019336922</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1592413649246</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592413649246</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,11 +92,23 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="463" y="192" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589024917841">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="192" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1589024917841" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1592413686070">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592413686070" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1592413687115">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592413687115" />
     <state x="394" y="213" key="com.intellij.ide.util.TipDialog" timestamp="1590210100920">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

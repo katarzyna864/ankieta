@@ -18,6 +18,7 @@ class Vote(models.Model):
     voted_question = models.ForeignKey(Question, related_name='topic_content_type', on_delete=models.CASCADE,)
     date = models.CharField(max_length=200)
     voted_answer = models.CharField(max_length=200)
+    hash = models.CharField(max_length=200)
     def __str__(self):
         return self.date
 
@@ -26,6 +27,7 @@ class Vote2(models.Model):
     voted_question = models.ForeignKey(Question, related_name='topic_content_type2', on_delete=models.CASCADE,)
     date = models.CharField(max_length=200)
     voted_answer = models.CharField(max_length=200)
+    hash = models.CharField(max_length=200)
     def __str__(self):
         return self.date
 
